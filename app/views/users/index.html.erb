@@ -1,6 +1,10 @@
 <% provide(:title, "Users Index") %>
 <h1> Users Index</h1>
 
+<%= will_paginate %>
+
 <ul>
   <%= render @users %>
 </ul>
+
+<%= will_paginate %>

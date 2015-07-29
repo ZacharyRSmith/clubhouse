@@ -8,13 +8,14 @@ class UsersEditTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "users index should work for admin" do
+  test "users index should work for admin, with pagination" do
     log_in_as(@admin)
 
     get users_path
     assert_template 'users/index'
+    assert_select 'div.pagination'
 
-    first_page_of_users = User.all
+    first_page_of_users = User.paginate(page: 1)
     first_page_of_users.each do |user|
       assert_select 'a[href=?]', user_path(user), text: user.username
       assert_select 'a[href=?]', user_path(user), text: 'delete' unless user == @admin
