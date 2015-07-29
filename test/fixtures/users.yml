@@ -1,4 +1,17 @@
+admin:
+  username: ExampleAdmin
+  email: admin@gmail.com
+  password_digest: <%= User.digest('password') %>
+  admin: true
+
 test_user:
   username: ExampleUser
   email: foobar@gmail.com
   password_digest: <%= User.digest('password') %>
+
+<% 30.times do |n| %>
+user_<%= n %>:
+  username: <%= "ExampleUser#{n}" %>
+  email: <%= "foobar#{n}@gmail.com" %>
+  password_digest: <%= User.digest('password') %>
+<% end %>
