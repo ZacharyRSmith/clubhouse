@@ -1,12 +1,12 @@
-<% provide(:title, 'Sign up') %>
-<h1>Sign up</h1>
+<% provide(:title, "Edit user") %>
+<h1>Edit yo self!</h1>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'fields', f: f %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "WHO AM I?!?!", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

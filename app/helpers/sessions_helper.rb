@@ -14,6 +14,10 @@ module SessionsHelper
     end
   end
 
+  def current_user?(user)
+    user == current_user
+  end
+
   # Forgets a persistent session.
   def forget(user)
     user.forget
